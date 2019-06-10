@@ -97,8 +97,9 @@ header{
 .container-nav{
   width: 90px;
   background: linear-gradient(135deg, rgba(253,83,94,1) 0%, rgba(250,115,111,1) 100%);
-  height: 91vh;
+  height: 810px;
   display: grid;
+  grid-template-columns: minmax(90px,0.5fr);
   grid-template-rows: repeat(3,1fr) minmax(300px,2fr);
   align-items: center;
   justify-items: center;
@@ -123,4 +124,98 @@ header{
 #ajustes{
   align-self: end;
   margin-bottom: 30px;
+}
+
+/* .main{
+  display: grid;
+  grid-auto-columns: 30px 0.25fr;
+  grid-template-areas: "nav title-new title-new title-new" 
+                       "nav pel pel pel"
+                       "nav title-crit title-crit title-crit"
+                       "nav pel pel pel"
+                       "nav title-mand title-mand title-mand"
+                       "nav pel pel pel";
+} */
+.main{
+  display: flex;
+  width: minmax(auto,1924px);
+}
+
+.peliculas{
+  margin-left: 40px; 
+  width: minmax(auto,1834px);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(290px,1fr));
+  /* grid-auto-rows: minmax(30px, 0.5fr) minmax(200px, 0.8fr); */
+  grid-gap: 10px 20px;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-evenly;
+  /* grid-template-areas: "title-new title-new title-new"
+                      "peli peli peli"
+                      "title-crit title-crit title-crit"
+                      "peli peli peli"; */
+}
+
+/* .title-new{
+  grid-area: title-new;
+}
+
+.title-crit{
+  grid-area: title-crit;
+} */
+
+.pelicula-header{
+  justify-self: start;
+  align-self: end;
+  padding: 5px;
+  text-transform: capitalize;
+  color: rgb(44,54,63);
+  font-weight: bold;
+  grid-column-end: span 3;
+}
+
+.pelicula{
+  position: relative;
+  display: block;
+  width: inherit;
+  height: inherit; 
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px 1px rgba(97,92,97,1);
+  margin: 5px;
+}
+
+/* .pelicula-imagen{
+  
+} */
+
+.pelicula-imagen img{
+  width: 100%;
+  vertical-align: top;
+  border-radius: 10px;
+}
+
+.short-description{
+  background-color: rgba(250,115,111,0.8);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  align-items: center;
+  justify-content: center;
+  height: 95px;
+  width: 100%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  font-size: 12px;
+}
+
+.short-description h2{
+  font-size: 20px;
+  text-transform: capitalize;
+  margin-bottom: 5px; 
 }
