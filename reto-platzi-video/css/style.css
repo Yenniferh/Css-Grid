@@ -1,0 +1,106 @@
+/* Font - Roboto */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+/*  Container Principal */
+.main{
+  display: grid;
+  grid-template-columns: minmax(auto,1024px);
+}
+
+.container{
+  width: 100%;
+  display: grid;
+  grid-template: 
+  minmax(450px,2fr) minmax(590px,3fr) / minmax(330px,1fr) minmax(980px, 2fr);
+  grid-template-areas: "side-bar top-content"
+                       "side-bar bottom-content";
+}
+
+/* Side bar */
+.side-bar{
+  grid-area: side-bar;
+  color: white;
+  width: inherit;
+  height: inherit;
+  display: grid;
+  grid-template: minmax(60px, 0.5fr) minmax(520px,3fr) minmax(420px,2fr)/ 50px 1fr;
+  grid-template-areas: "logo logo"
+                       "my-playlist my-playlist"
+                       "friend-playlists friend-playlists";
+  background-color: #151b31;
+}
+
+.side-bar a{
+  color: white;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.logo{
+  grid-area: logo;
+}
+
+.logo-image{
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+/* Section Mi playlist */
+.my-playlist{
+  grid-area: my-playlist;
+  height: auto;
+  margin: 10px;
+  display: grid;
+  grid-template: minmax(30px,0.5fr) repeat(10,minmax(20px,1fr))/ 30px 1fr;
+  /* grid-auto-columns: 20px 1fr;
+  grid-auto-rows: minmax(20px, 1fr); */
+  align-items: center;
+}
+
+.my-playlist h3{
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.top-10{
+  justify-self: center;
+}
+
+.link-top-10{
+  padding-left: 5px;
+  padding-right: 20px; 
+}
+
+/* Section Playlists de Amigos */
+.friend-playlists{
+  grid-area: friend-playlists;
+}
+
+
+
+/* Video - Top Content */
+.top-content{
+  grid-area: top-content;
+  display: flex;
+}
+
+.top-content iframe{
+  width: 100%;
+  height: auto; 
+}
+
+.bottom-content{
+  grid-area: bottom-content;
+}
+
+/* .container div{
+  background-color: blue;
+  height: 200px;
+  height: inherit;
+  width: inherit; 
+} */
